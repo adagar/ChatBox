@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import AddMessageComponent from '../components/AddMessage';
+import { addMessage } from '../actions';
 
-class AddMessage extends Component {
-    render(){
-        return (
-            <section id="new-message">New message</section> 
-        );
+const mapDispatchToProps = dispatch => ({
+    dispatch: (message, author) => {
+        dispatch(addMessage(message, author))
     }
-}
+})
 
-export default AddMessage;
+export const AddMessage = connect(() => ({}), mapDispatchToProps)(AddMessageComponent);

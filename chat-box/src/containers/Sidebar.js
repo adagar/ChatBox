@@ -1,11 +1,6 @@
-import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import SidebarComponent from '../components/Sidebar';
 
-class Sidebar extends Component {
-    render(){
-        return (
-            <aside id="sidebar">Users</aside>
-        )
-    }
-}
-
-export default Sidebar;
+export const Sidebar = connect(state => ({
+    messages: state.users
+}), {})(SidebarComponent);

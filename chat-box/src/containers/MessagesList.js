@@ -1,11 +1,6 @@
-import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import MessagesListComponent from '../components/MessagesList';
 
-class MessagesList extends Component {
-    render(){
-        return (
-            <section id="messages-list">Messages list</section>
-        )
-    }
-}
-
-export default MessagesList;
+export const MessagesList = connect(state => ({
+    messages: state.messages
+}), {})(MessagesListComponent);
