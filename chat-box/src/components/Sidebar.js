@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const Sidebar = ({ users = []}) => (
     <aside id="sidebar" className="sidebar">
+        Online:
         <ul>
             {users.map(user => (
                 <li key={user.id}>{user.name}</li>
